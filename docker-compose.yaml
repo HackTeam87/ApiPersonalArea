@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: postgres:11
+    container_name: postgres11-new
+    ports:
+      - "5432:5432"
+    network_mode: host  
+    volumes:
+      - ./data/:/var/lib/postgressql/data
+    restart: always  
+    environment:
+      - POSTGRES_USER=grin
+      - POSTGRES_PASSWORD=qwer1234t5
+      - POSTGRES_DB=api_personal_area
+    
